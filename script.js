@@ -30,9 +30,8 @@ const csv_to_array = (data, delimiter = ',') => // Array function with 2 argumen
 
 // Convert inner arrays from part 2 into objects
 
-// Convert inner arrays into objects with lowercase keys
 const csv_to_object_array = (data, delimiter = ',') => {
-    const array = csv_to_array(data, delimiter);
+    const array = csv_to_array(data, delimiter); // inner array
     const headers = array[0].map(header => header.toLowerCase()); // Lowercase headers
 
     return array.slice(1).map(innerArray => {
