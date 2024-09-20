@@ -31,8 +31,8 @@ const csv_to_array = (data, delimiter = ',') => // Array function with 2 argumen
 // Convert inner arrays from part 2 into objects
 
 const csv_to_object_array = (data, delimiter = ',') => {
-    const array = csv_to_array(data, delimiter); // inner array
-    const headers = array[0].map(header => header.toLowerCase()); // Lowercase headers
+    const array = csv_to_array(data, delimiter); // acceccing inner array
+    const headers = array[0].map(header => header.toLowerCase()); // getting the headers and converting them into Lowercase 
 
     return array.slice(1).map(innerArray => {
         return innerArray.reduce((obj, value, index) => {
@@ -42,7 +42,35 @@ const csv_to_object_array = (data, delimiter = ',') => {
     });
 };
 
-
+let result = csv_to_object_array(str);
 
 // Invoking the function
 console.log(csv_to_object_array(str));
+
+
+
+console.log("=======================================Part 4 ==================================================")
+
+// part 4 
+/**
+ * Using array methods, accomplish the following tasks, in order upon the result of Part 3:
+ */
+
+// 1. Remove the last element from the sorted array.
+
+result.pop();
+
+// 2. Insert the following object at index 1:
+// { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+// Define the new object
+const person1 = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
+
+// Insert newPerson at index 1
+result.splice(1, 0, person1);
+// 3.Add the following object to the end of the array:
+// { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+// Define another object
+const person6 = { id: "7", name: "Bilbo", occupation: "None", age: "111" };
+result.push(person6);
+
+console.log(result);
