@@ -113,5 +113,19 @@ console.log("Average Age:", averageAge);
 // Part 5
 // As a final task, transform the final set of data back into CSV format.
 
+// Step 1: Extract headers
+const headers = Object.keys(result[0]); // Get the keys of the first object
 
+// Step 2: Create header row
+const headerRow = headers.join(','); // Join headers with a comma
+
+// Step 3: Create rows for each object
+const rows = result.map(obj => {
+    return headers.map(header => obj[header]).join(','); // Join each value with a comma
+});
+
+// Step 4: Combine header and rows into a single CSV string
+const csvData = [headerRow, ...rows].join('\n'); // Join header and rows with new lines
+
+console.log(csvData); // Output the final CSV string
 
