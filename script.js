@@ -3,6 +3,10 @@
 
 //Part 1
 
+/**
+ * For the first part of this assignment, revisit your code from ALAB 308.3.1, wherein you create a script that parsed CSVs. Now that you have knowledge of arrays and objects, how would you change your approach to this problem? Take a few minutes to examine and refactor the code before continuing.
+ */
+
 const str  = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26"
 
 console.log("================================= Part 1 ====================================")
@@ -12,6 +16,17 @@ const header = str.split('\n');
 
 
 // Part 2
+/**
+ * Declare a variable that stores the number of columns in each row of data within the CSV.
+Instead of hard-coding four columns per row, expand your code to accept any number of columns. This should be calculated dynamically based on the first row of data.
+
+Store your results in a two-dimensional array.
+Each row should be its own array, with individual entries for each column.
+Each row should be stored in a parent array, with the heading row located at index 0.
+Cache this two-dimensional array in a variable for later use.
+ */
+
+
  console.log("================================= Part 2 =====================================")
 
 const csv_to_array = (data, delimiter = ',') => // Array function with 2 arguments, passing ',' as a default delimiter
@@ -92,3 +107,11 @@ for (let i = 0; i < result.length; i++) {
 const averageAge = sumOfAges / result.length;
 
 console.log("Average Age:", averageAge);
+
+
+
+// Part 5
+// As a final task, transform the final set of data back into CSV format.
+
+
+
