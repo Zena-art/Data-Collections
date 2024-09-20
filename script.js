@@ -131,5 +131,7 @@ const csvData = [headerRow, ...rows].join('\n'); // Join header and rows with ne
 
 console.log(csvData); // Output the final CSV string
 
+console.log(JSON.stringify(csvData));
+
 
 
