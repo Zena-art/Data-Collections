@@ -74,3 +74,21 @@ const person6 = { id: "7", name: "Bilbo", occupation: "None", age: "111" };
 result.push(person6);
 
 console.log(result);
+
+/*
+Finally, use the values of each object within the array and the array’s length property to calculate the average age of the group. This calculation should be accomplished using a loop.
+
+*/
+
+
+let sumOfAges = 0;  // Variable to hold the sum of ages
+
+// Loop through the array to calculate the sum of ages
+for (let i = 0; i < result.length; i++) {
+    sumOfAges += Number(result[i].age);  // Convert age to a number and add to sum
+}
+
+// Calculate the average age
+const averageAge = sumOfAges / result.length;
+
+console.log("Average Age:", averageAge);
